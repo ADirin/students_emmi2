@@ -5,12 +5,12 @@ pipeline {
     }
 
     environment {
-        //PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
-        //JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'  // Adjust to your actual JDK pat
+        PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
+        JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'  // Adjust to your actual JDK pat
         SONARQUBE_SERVER = 'SonarQubeServer'  // The name of the SonarQube server configured in Jenkins
         SONAR_TOKEN = 'sqa_de747f324c5fd7b470b8a051450684da6055c124' // Store the token securely
         DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
-        DOCKERHUB_REPO = 'meemmi/week5'
+        DOCKERHUB_REPO = 'amirdirin/week5_students_emmi2'
         DOCKER_IMAGE_TAG = 'latest'
 
 
@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/meemmi/InClassAssignment_week5.git'
+                git branch: 'main', url: 'https://github.com/ADirin/students_emmi2.git'
             }
         }
 
