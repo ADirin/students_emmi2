@@ -5,6 +5,8 @@ pipeline {
     }
 
     environment {
+        GIT_HOME = "C:\\Program Files\\Git\\bin"
+            PATH = "${env.GIT_HOME};${env.PATH}"
         PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
         JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'  // Adjust to your actual JDK pat
         SONARQUBE_SERVER = 'SonarQubeServer'  // The name of the SonarQube server configured in Jenkins
