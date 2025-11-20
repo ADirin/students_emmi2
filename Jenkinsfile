@@ -8,9 +8,9 @@ pipeline {
      PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
            JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'  // Adjust to your actual JDK pat
         SONARQUBE_SERVER = 'SonarQubeServer'  // The name of the SonarQube server configured in Jenkins
-        SONAR_TOKEN = 'sqa_4a9cd5ae8e65c1d8a59395010075d01f8b60170e' // Store the token securely
+        SONAR_TOKEN = 'sqa_de747f324c5fd7b470b8a051450684da6055c124' // Store the token securely
         DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
-        DOCKERHUB_REPO = 'amirdirin/sep2_week5_f2025'
+        DOCKERHUB_REPO = 'meemmi/week5'
         DOCKER_IMAGE_TAG = 'latest'
 
 
@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ADirin/sep2_week5_inclass_s2.git'
+                git branch: 'main', url: 'https://github.com/meemmi/InClassAssignment_week5.git'
             }
         }
 
@@ -38,7 +38,7 @@ pipeline {
                                 -Dsonar.sources=src ^
                                 -Dsonar.projectName=DevOps-Demo ^
                                 -Dsonar.host.url=http://localhost:9000 ^
-                                -Dsonar.login=${%SONAR_TOKEN%} ^
+                                -Dsonar.login=${env.SONAR_TOKEN} ^
                                 -Dsonar.java.binaries=target/classes
                             """
                         }
