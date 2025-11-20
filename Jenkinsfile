@@ -12,7 +12,7 @@ pipeline {
         PATH = "${env.GIT_HOME};${env.DOCKER_BIN};${env.PATH}"
 
         SONARQUBE_SERVER = "SonarQubeServer"
-        SONAR_TOKEN = credentials('sonar-token')  // safer than hardcoding!
+        SONAR_TOKEN = credentials('sqa_14bbc7fa82bb011c04e5dcda04c832c7ab6a245d')  // safer than hardcoding!
 
         DOCKERHUB_CREDENTIALS_ID = "Docker_Hub"
         DOCKERHUB_REPO = "amirdirin/week5_students_emmi2"
